@@ -118,7 +118,77 @@ void CrearTriangulo()
 	0.05f, 0.075f, 0.0f,
 	0.20f, 0.075f, 0.0f
 	
-	// Letra G (53-120)
+	// Letra G (124-192)
+	// ------ Letra G Vertical izquierda
+	0.4f, 0.15f, 0.0f,
+	0.4f, -0.125f, 0.0f,
+	0.55f, -0.125f, 0.0f,
+	
+	0.55f, -0.125f, 0.0f,
+	0.55f, 0.15f, 0.0f,
+	0.4f, 0.15f, 0.0f,
+	
+	// ------ Letra G Esquinas izquierda
+	0.4f, 0.15f, 0.0f,
+	0.55f, 0.15f, 0.0f,
+	0.55f, 0.3f, 0.0f,
+	
+	0.55f, -0.275f, 0.0f,
+	0.55f, -0.125f, 0.0f,
+	0.4f, -0.125f, 0.0f,
+	
+	// ------ Letra G Centro horizontal
+	0.65f, 0.3f, 0.0f,
+	0.55f, 0.15f, 0.0f,
+	0.55f, 0.3f, 0.0f,
+	
+	0.65f, 0.15f, 0.0f,
+	0.65f, 0.3f, 0.0f,
+	0.55f, 0.15f, 0.0f,
+	
+	0.65f, -0.125f, 0.0f,
+	0.55f, -0.275f, 0.0f,
+	0.55f, -0.125f, 0.0f,
+	
+	0.65f, -0.275f, 0.0f,
+	0.65f, -0.125f, 0.0f,
+	0.55f, -0.275f, 0.0f,
+	
+	// ------ Letra G Esquinas derechas
+	0.65f, 0.3f, 0.0f,
+	0.65f, 0.15f, 0.0f,
+	0.80f, 0.15f, 0.0f,
+	
+	0.65f, -0.275f, 0.0f,
+	0.65f, -0.125f, 0.0f,
+	0.80f, -0.125f, 0.0f,
+	
+	// ------ Letra G Verticales derechas
+	0.65f, 0.15f, 0.0f,
+	0.65f, 0.10f, 0.0f,
+	0.80f, 0.15f, 0.0f,
+	
+	0.65f, 0.10f, 0.0f,
+	0.80f, 0.15f, 0.0f,
+	0.80f, 0.10f, 0.0f,
+	
+	0.65f, 0.02f, 0.0f,
+	0.65f, -0.125f, 0.0f,
+	0.80f, 0.02f, 0.0f,
+	
+	0.65f, -0.125f, 0.0f,
+	0.80f, 0.02f, 0.0f,
+	0.80f, -0.125f, 0.0f,
+	
+	// ------ Letra G Palito del centro
+	
+	0.60f, 0.02f, 0.0f,
+	0.60f, -0.060f, 0.0f,
+	0.65f, 0.02f, 0.0f,
+	
+	0.60f, -0.060f, 0.0f,
+	0.65f, 0.02f, 0.0f,
+	0.65f, -0.060f, 0.0f
 
 	
 	};
@@ -259,7 +329,7 @@ int main()
 		glUseProgram(shader);
 
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES,0,60);
+		glDrawArrays(GL_TRIANGLES,0,108);
 		glBindVertexArray(0);
 
 		glUseProgram(0);
