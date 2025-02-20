@@ -315,7 +315,16 @@ int main()
 	CrearTriangulo();
 	CompileShaders();
 	float ultimoCambio = glfwGetTime(); // Almacena el tiempo del último cambio de color
-	int colorIndex = 0; // Índice del color actual
+	// Inicializar la semilla de números aleatorios antes del loop
+	srand(time(0));
+	// Asigna valores aleatorios para que no empiece con el color negro
+	// Si no se hace esto, siempre empieza en negro nwn (este segmento solo se ejecuta una vez)
+	float r = static_cast<float>(rand()) / RAND_MAX;
+	float g = static_cast<float>(rand()) / RAND_MAX;
+	float b = static_cast<float>(rand()) / RAND_MAX;
+	glClearColor(r, g, b, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT);
+	
 	
 	//Loop mientras no se cierra la ventana
 	while (!glfwWindowShouldClose(mainWindow))
@@ -329,22 +338,14 @@ int main()
 		// Cambiar color cada 2 segundos
 		if (tiempoActual - ultimoCambio >= 2.0) {
 			ultimoCambio = tiempoActual; // Actualizar el tiempo de cambio
-			colorIndex = (colorIndex + 1) % 3; // Alternar entre 3 colores
-			//NOTA: No debo utilizar (colorindex++) por que primero devuelve el dato y luego actualiza
-			//Puedo usar ++colorIndex pero es menos claro :/
-		}
 	
-		// Establecer el color de la ventana según el índice
-		if (colorIndex == 0) {
-			glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // Verde
+			//Asigna valores aleatorios desde la primera vez que se alcanza el tiempo de 2 seg
+			float r = static_cast<float>(rand()) / RAND_MAX;
+			float g = static_cast<float>(rand()) / RAND_MAX;
+			float b = static_cast<float>(rand()) / RAND_MAX;
+			glClearColor(r, g, b, 1.0f);
 		}
-		else if (colorIndex == 1) {
-			glClearColor(1.0f, 0.0f, 0.0f, 1.0f); // Rojo
-		}
-		else {
-			glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // Azul
-		}
-	
+		
 		// Limpiar la ventana con el color seleccionado
 		glClear(GL_COLOR_BUFFER_BIT);
 
